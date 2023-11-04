@@ -6,8 +6,19 @@
 /*   By: ebouboul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:41:52 by ebouboul          #+#    #+#             */
-/*   Updated: 2023/11/03 17:41:54 by ebouboul         ###   ########.fr       */
+/*   Updated: 2023/11/03 22:30:41 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+void	ft_bzero(void	*s, size_t	n)
+{
+	unsigned char	*p;
+	size_t i;
 
-
+	*p = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = 0;
+		i++;
+	}
+}
