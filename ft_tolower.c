@@ -11,3 +11,25 @@
 /* ************************************************************************** */
 
 
+int ft_tolower(int c){
+    if(c >= 'A' && c <= 'Z')
+    {
+    c = c - ('A' - 'a');
+    return (c);
+    }
+    return(c);
+}
+
+/*
+#include <stdio.h>
+
+
+int main() {
+    char inputChar = 'L';  
+    char lowercaseChar = ft_tolower(inputChar);
+
+    printf("Original Character: %c\n", inputChar);
+    printf("Lowercase Character: %c\n", lowercaseChar);
+
+    return 0;
+} */
