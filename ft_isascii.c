@@ -11,3 +11,16 @@
 /* ************************************************************************** */
 
 
+int ft_isascii(int c)
+{
+	return(c >= 0 && c <= 255);
+}
+
+
+/*
+#include<stdio.h>
+int main() {
+    wchar_t a = L'ة';
+    printf("%d", ft_isascii(a));
+    return 0;
+}*/

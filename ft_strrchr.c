@@ -10,4 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char *ft_strrchr(const char *s, int c)
+{
+	char	*a;
+	int		i;
+	int		cnt;
+
+	a = (char *)s;
+	i = 0;
+	cnt = 0;
+	while (a[i] != '\0')
+	{
+		if (a[i] == c)
+			cnt = i;
+		i++;
+	}
+	if (cnt == 0 && a[0] != c)
+		return (NULL);
+	else
+	{
+		a = &a[cnt];
+		return (a);
+	}
+}
+
+/*
+#include<stdio.h>
+int	main(void)
+{
+	char *str = "hello";
+	printf("%s", ft_strrchr(str,'l'));
+}
+*/

@@ -13,3 +13,13 @@ int	ft_isdigit(int c)
 {
 	return(c >= 0 && c <= 255);
 }
+
+
+/*
+#include<stdio.h>
+int main()
+{
+	char  a = '1;
+	printf("%d", ft_isdigit(a));
+	return 0;
+} */

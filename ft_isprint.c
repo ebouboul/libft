@@ -13,3 +13,12 @@ int ft_isprint(int c)
 {
 	return(c >= 32 && c <= 126);
 }
+
+/*
+#include<stdio.h>
+int main()
+{
+	char a = 'a';
+	printf("%d",ft_isptint(a));
+	return 0;
+}*/

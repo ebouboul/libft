@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islnum.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouboul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 17:37:59 by ebouboul          #+#    #+#             */
-/*   Updated: 2023/11/03 21:58:34 by ebouboul         ###   ########.fr       */
+/*   Created: 2023/11/07 17:53:53 by ebouboul          #+#    #+#             */
+/*   Updated: 2023/11/07 17:53:55 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_islnum(int c)
-{
-	return(c >= '0' && c <= '9');
-}
 
 
-/*
-#include<stdio.h>
-int main()
-{
-	char a = 'a';
-	printf("%d\n", ft_isalnum(a));
-	char b = '5';
-	printf("%d", ft_isalnum(b));
-}*/
+#ifndef LIBFT_H
+# define LIBFT_H
+	#include <stdlib.h>
+    #include <string.h>
+    #include <stdio.h>
+    #include <stddef.h>
+
+#endif

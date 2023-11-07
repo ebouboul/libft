@@ -13,3 +13,13 @@ int	ft_isalpha(int c)
 {
 	return((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
+
+
+/*
+#include<stdio.h>
+int main()
+{
+	char a = 'a';
+	printf("%d",ft_isalpha(a));
+	return 0;
+}*/
