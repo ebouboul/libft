@@ -24,5 +24,7 @@
     size_t ft_strlcat(char *dst, const char *src, size_t size);
     void ft_putstr_fd(char *s, int fd);
     void ft_putchar_fd(char c, int fd);
+    void	ft_bzero(void	*s, size_t	n)
+
 
 #endif
