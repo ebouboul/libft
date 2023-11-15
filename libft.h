@@ -18,4 +18,11 @@
     #include <stdio.h>
     #include <stddef.h>
 
+    char *ft_substr(char const *s, unsigned int start, size_t len);
+    size_t	ft_strlen(const char *s);
+    size_t strlcpy(char *dest, const char *src, size_t size);
+    size_t ft_strlcat(char *dst, const char *src, size_t size);
+    void ft_putstr_fd(char *s, int fd);
+    void ft_putchar_fd(char c, int fd);
+
 #endif

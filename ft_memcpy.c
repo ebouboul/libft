@@ -9,7 +9,7 @@
 /*   Updated: 2023/11/03 17:41:00 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<string.h>
+#include "libft.h"
 void    *ft_memcpy(void *dest, const void *src, size_t n)
 {
     size_t  i;
@@ -27,6 +27,7 @@ void    *ft_memcpy(void *dest, const void *src, size_t n)
     }
     return (dest);
 }
+/*
 #include <stdio.h>
 
 int main(void)
@@ -37,3 +38,4 @@ int main(void)
 	printf("%s",d );
     return (0);
 }
+*/

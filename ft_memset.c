@@ -27,7 +27,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return(s);
 }
-
+/*
 #include <stdio.h>
 int main(void)
 {
@@ -44,3 +44,4 @@ int main(void)
 
     return 0;
 }
+*/

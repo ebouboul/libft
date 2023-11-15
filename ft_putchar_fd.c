@@ -20,7 +20,7 @@ void ft_putchar_fd(char c, int fd)
 
 #include <fcntl.h>
 #include<stdio.h>
-
+/*
 int main()
 {
      char c = 'a';
@@ -33,3 +33,4 @@ int main()
     ft_putchar_fd(c,fd);
     close(fd);
 }
+*/
