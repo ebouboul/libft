@@ -9,39 +9,39 @@
 /*   Updated: 2023/11/03 23:49:45 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<string.h>
 #include <stddef.h>
+#include <string.h>
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *p;
-	unsigned char value;
-	size_t	i;
+	unsigned char	*p;
+	unsigned char	value;
+	size_t			i;
 
 	p = (unsigned char *)s;
 	value = (unsigned char)c;
 	i = 0;
-	while(i < n)
+	while (i < n)
 	{
 		p[i] = value;
 		i++;
 	}
-	return(s);
+	return (s);
 }
 /*
 #include <stdio.h>
-int main(void)
+
+int	main(void)
 {
     char myArray[10];
-    char value = 'A';
+	char	value;
 
+    value = 'A';
     ft_memset(myArray, value, 5);
-
     // Print the content of myArray
     for (size_t i = 0; i < sizeof(myArray); i++) {
         printf("%c ", myArray[i]);
     }
     printf("\n");
-
-    return 0;
+    return (0);
 }
 */

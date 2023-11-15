@@ -10,25 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-const char *ft_strchr(const char *s, int c) {
-    while (*s)
-  
-     {
-        if (*s == (char)c) {
-            return s;
-        }
-        s++;
-    }
-
-    return 0;
+const char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == (char)c)
+		{
+			return (s);
+		}
+		s++;
+	}
+	return (0);
 }
 
 /*
 #include <stdio.h>
 
 
-int main() {
+int	main(void) {
     const char *str = "Hello, World!";
     char searchChar = 'W';
 
@@ -40,6 +39,6 @@ int main() {
         printf("'%c' not found in the string\n", searchChar);
     }
 
-    return 0;
+    return (0);
 }
 */

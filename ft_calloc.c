@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-#include "libft.h"
-
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*str;
@@ -24,7 +22,8 @@ void	*ft_calloc(size_t count, size_t size)
 }
 /*
 #include <stdio.h>
-int main() {
+
+int	main(void) {
     size_t count = 5;
     size_t size = 10;
     
@@ -36,5 +35,5 @@ int main() {
     } else {
         printf("Memory allocation failed\n");
     }
-    return 0;
+    return (0);
 }*/

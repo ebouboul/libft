@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && *s1 && *s2)
@@ -28,11 +26,15 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 /*
-#include<stdio.h>
+#include <stdio.h>
+
 int main ()
 {
-	char *s1 = "hello";
-	char *s2 = "hell";
+	char	*s1;
+	char	*s2;
+
+	s1 = "hello";
+	s2 = "hell";
 	printf("%d", ft_strncmp(s1,s2,4));
 }
 */

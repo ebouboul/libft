@@ -10,29 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_toupper(int c){
-    if(c >= 'a' && c <= 'z')
-    {
-    c = c - ('a' - 'A');
-    return (c);
-    }
-    return(c);
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+	{
+		c = c - ('a' - 'A');
+		return (c);
+	}
+	return (c);
 }
-
 
 /*
 #include <stdio.h>
 
 
-int main(void) {
+int	main(void) {
     char lowercaseChar = 'a';
     char uppercaseChar = ft_toupper(lowercaseChar);
 
     printf("Original character: %c\n", lowercaseChar);
     printf("Uppercase character: %c\n", uppercaseChar);
 
-    return 0;
+    return (0);
 }
 
 */

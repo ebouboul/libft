@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (s)
@@ -31,11 +28,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 #include <stdio.h>
 
 // Sample function that increments characters by their index
-void increment_char(unsigned int index, char *c) {
+void	increment_char(unsigned int index, char *c) {
     *c += (char)index;
 }
 
-int main() {
+int	main(void) {
     char test_string[] = "Hello, World!";
     
     printf("Original String: %s\n", test_string);
@@ -45,6 +42,6 @@ int main() {
 
     printf("Modified String: %s\n", test_string);
 
-    return 0;
+    return (0);
 }
 */

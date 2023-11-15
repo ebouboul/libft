@@ -6,22 +6,23 @@
 /*   By: ebouboul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:36:48 by ebouboul          #+#    #+#             */
-/*   Updated: 2023/11/03 21:58:56 by ebouboul         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:13:40 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isalpha(int c)
 {
-	return((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	if ((c >= 65 && c <= 'Z') || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
 }
 
-
 /*
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+int	main(void)
 {
 	char a = 'a';
 	printf("%d",ft_isalpha(a));
-	return 0;
+	return (0);
 }*/

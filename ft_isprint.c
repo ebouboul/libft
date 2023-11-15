@@ -11,16 +11,17 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	return(c >= 32 && c <= 126);
+	return (c >= 32 && c <= 126);
 }
 
 /*
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+int	main(void)
 {
 	char a = 'a';
 	printf("%d",ft_isptint(a));
-	return 0;
+	return (0);
 }*/

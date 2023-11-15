@@ -11,43 +11,44 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-    int result;
-    result = 0;
-    int sign;
-    sign = 1;
-    while ((*nptr >= 'A' && *nptr <= 'z') || (*nptr == 32) )
-    {
-        nptr++;
-    }
-    if (*nptr == '+' || *nptr == '-')
-    {
-        if (*nptr == '-')
-        {
-            sign = -1;
-        }
-        nptr++;
-    }
-        while(*nptr >= '0' && *nptr <= '9')
-    {
-        result = result * 10 + (*nptr - 48);
-        *nptr++;
-    }
-    return(result * sign);
+	int	result;
+	int	sign;
+
+	result = 0;
+	sign = 1;
+	while ((*nptr >= 'A' && *nptr <= 'z') || (*nptr == 32))
+	{
+		nptr++;
+	}
+	if (*nptr == '+' || *nptr == '-')
+	{
+		if (*nptr == '-')
+		{
+			sign = -1;
+		}
+		nptr++;
+	}
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		result = result * 10 + (*nptr - 48);
+		nptr++;
+	}
+	return (result * sign);
 }
 
 /*
 #include <stdio.h>
 
 
-int main() {
+int	main(void) {
     const char *str = "12345"; 
     int value = atoi(str); 
 
     printf("Converted integer: %d\n", value);
 
-    return 0;
+    return (0);
 }
 
 */

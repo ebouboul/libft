@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	return(c >= 0 && c <= 255);
+	return (c >= 0 && c <= 255);
 }
 
-
 /*
-#include<stdio.h>
-int main() {
+#include <stdio.h>
+
+int	main(void) {
     wchar_t a = L'ة';
     printf("%d", ft_isascii(a));
-    return 0;
+    return (0);
 }*/

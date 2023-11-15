@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t lendst;
-	size_t lensrc;
+	size_t	i;
+	size_t	lendst;
+	size_t	lensrc;
 
 	lensrc = ft_strlen(src);
 	lendst = ft_strlen(dst);
@@ -25,20 +25,20 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		return (lensrc);
 	if (size != 0)
 	{
-		while (i < size -1 && src[i] != '\0')
+		while (i < size - 1 && src[i] != '\0')
 		{
 			dst[lendst + i] = src[i];
 			i++;
 		}
 	}
 	dst[lendst + i] = '\0';
-	if(size > lendst)
+	if (size > lendst)
 		return (lendst + lensrc);
 	else
 		return (size + lendst);
 }
 /*
-int main() {
+int	main(void) {
     char destination[20] = "Hello, ";
     const char *source = "World!";
     size_t bufferSize = sizeof(destination);
@@ -48,6 +48,6 @@ int main() {
     printf("Concatenated String: %s\n", destination);
     printf("Total Length: %zu\n", copiedLength);
 
-    return 0;
+    return (0);
 }
 */

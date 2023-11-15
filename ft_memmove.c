@@ -11,34 +11,40 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memmove(void *dest, const void *src, size_t n) {
-    unsigned char *d = dest;
-    const unsigned char *s = src;
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char		*d;
+	const unsigned char	*s;
 
-    if (d == s) {
-        return d;
-    }
-
-    if (d < s || d >= s + n) {
-        
-        while (n--) {
-            *d++ = *s++;
-        }
-    } else {
-        d = d + n - 1;
-        s = s + n - 1;
-        while (n--) {
-            *d-- = *s--;
-        }
-    }
-
-    return dest;
+	d = dest;
+	s = src;
+	if (d == s)
+	{
+		return (d);
+	}
+	if (d < s || d >= s + n)
+	{
+		while (n--)
+		{
+			*d++ = *s++;
+		}
+	}
+	else
+	{
+		d = d + n - 1;
+		s = s + n - 1;
+		while (n--)
+		{
+			*d-- = *s--;
+		}
+	}
+	return (dest);
 }
 
 /*#include <stdio.h>
 #include <string.h>
 
-int main() {
+int	main(void) {
    char str1[] = "Hello, world!";
    char str2[] = "           ";
    char str3[] = "XXXXXXXXXXXXXXXX";
@@ -56,5 +62,5 @@ int main() {
    printf("str2: %s\n", str2);
    printf("str3: %s\n", str3);
 
-   return 0;
+   return (0);
 }*/

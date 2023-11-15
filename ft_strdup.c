@@ -10,18 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-char *ft_strdup(const char *s) {
-    size_t len = ft_strlen(s); 
-    char *dup_str = (char *)malloc(len + 1); 
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	char	*dup_str;
 
-    if (dup_str != NULL) {
-        ft_strcpy(dup_str, s);
-    }
-
-    return dup_str;
+	len = ft_strlen(s);
+	dup_str = (char *)malloc(len + 1);
+	if (dup_str != NULL)
+	{
+		ft_strlcpy(dup_str, s, len);
+	}
+	return (dup_str);
 }
 
 /*
@@ -30,7 +32,7 @@ char *ft_strdup(const char *s) {
 #include <string.h>
 
 
-int main() {
+int	main(void) {
     const char *original = "Hello, World!";
     
     char *duplicate = ft_strdup(original);
@@ -43,6 +45,6 @@ int main() {
         printf("Memory allocation failed.\n");
     }
 
-    return 0;
+    return (0);
 }
 */

@@ -10,27 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include <stdio.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n) {
-    const unsigned char *p1 = (const unsigned char *)s1;
-    const unsigned char *p2 = (const unsigned char *)s2;
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-    while (n--) {
-        if (*p1 != *p2) {
-            return *p1 - *p2;
-        }
-        p1++;
-        p2++;
-    }
-
-    return 0;
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
+	while (n--)
+	{
+		if (*p1 != *p2)
+		{
+			return (*p1 - *p2);
+		}
+		p1++;
+		p2++;
+	}
+	return (0);
 }
 
 /*
-int main() {
+int	main(void) {
     const char str1[] = "hello";
     const char str2[] = "hello world";
     const char str3[] = "hello world";
@@ -40,6 +42,6 @@ int main() {
     printf("%d\n", ft_memcmp(str2, str3, sizeof(str2))); 
     printf("%d\n", ft_memcmp(str1, str4, sizeof(str1))); 
 
-    return 0;
+    return (0);
 }
 */

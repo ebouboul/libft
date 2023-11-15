@@ -11,17 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memchr(const void *s, int c, size_t n) {
-    const unsigned char *p = s;
 
-    while (n--) {
-        if (*p == c) {
-            return (void *)p;
-        }
-        p++;
-    }
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const unsigned char	*p;
 
-    return 0;
+	p = s;
+	while (n--)
+	{
+		if (*p == c)
+		{
+			return ((void *)p);
+		}
+		p++;
+	}
+	return (0);
 }
 
 /*int main() {
@@ -32,10 +36,11 @@ void *ft_memchr(const void *s, int c, size_t n) {
     void *result = ft_memchr(str, searchChar, n);
 
     if (result != 0) {
-        printf("Found '%c' at position %td\n", searchChar, (char *)result - str);
+        printf("Found '%c' at position %td\n", searchChar, (char *)result
+		- str);
     } else {
         printf("'%c' not found in the string\n", searchChar);
     }
 
-    return 0;
+    return (0);
 } */

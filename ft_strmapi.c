@@ -10,41 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include"libft.h"
-
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    char *str;
-    unsigned int i;
+	char			*str;
+	unsigned int	i;
 
-    i = 0;
-    str = malloc (sizeof(char) * strlen(s) + 1);
-    if (!str)
-        return NULL;
-    while (s[i])
-    {
-        str[i] = (*f)(i,s[i]);
-        i++;
-    }
-
-    str[i] = '\0';
-    return(str);
+	i = 0;
+	str = malloc(sizeof(char) * strlen(s) + 1);
+	if (!str)
+		return (NULL);
+	while (s[i])
+	{
+		str[i] = (*f)(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 /*
-static char helper(unsigned int i, char c)
+static char	helper(unsigned int i, char c)
 {
     if (c >= 'a' && c <= 'z')
     {
-        return c - 'a' + 'A';
+        return (c - 'a' + 'A');
     }
-    return c;
+    return (c);
 }
-#include<stdio.h>
+#include <stdio.h>
+
 int main ()
 {
-    char const *s = "hellohcfhy554'93'SA";
-    char *str = ft_strmapi(s,helper);
+	char const	*s;
+	char		*str;
+
+    s = "hellohcfhy554'93'SA";
+    str = ft_strmapi(s,helper);
     printf("%s",str);
 }
 */
