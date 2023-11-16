@@ -13,9 +13,10 @@
 
 int	ft_isdigit(int c)
 {
-	return (c >= 0 && c <= 255);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
-
 /*
 #include <stdio.h>
 

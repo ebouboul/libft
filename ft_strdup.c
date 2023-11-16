@@ -9,21 +9,20 @@
 /*   Updated: 2023/11/03 17:47:18 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(const char *src)
 {
-	size_t	len;
-	char	*dup_str;
+	size_t	size;
+	char	*dest;
 
-	len = ft_strlen(s);
-	dup_str = (char *)malloc(len + 1);
-	if (dup_str != NULL)
-	{
-		ft_strlcpy(dup_str, s, len);
-	}
-	return (dup_str);
+	size = ft_strlen(src);
+	dest = (char *)malloc(size * sizeof(char) + 1);
+	if (dest == NULL)
+		return (0);
+	ft_memcpy(dest, src, size);
+	dest[size] = '\0';
+	return (dest);
 }
 
 /*

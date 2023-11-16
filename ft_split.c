@@ -98,7 +98,7 @@ char	**ft_split(char const *s, char c)
 	s2[word] = NULL;
 	return (s2);
 }
-
+/*
 int	main(void)
 {
 	const char *input_string = "hi0hello0wohrld";
@@ -130,3 +130,4 @@ int	main(void)
 
 	return (0);
 }
+*/

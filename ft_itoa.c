@@ -12,48 +12,56 @@
 
 #include "libft.h"
 
-int	count(int nb)
+static char	*ft_char(char *s, unsigned int number, long int len)
 {
-	int	counter;
+	while (number > 0)
+	{
+		s[len--] = (number % 10) + 48;
+		number = number / 10;
+	}
+	return (s);
+}
 
-	counter = 0;
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
+static long int	ft_len(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n != 0)
 	{
-		nb = -nb;
-		counter++; // Account for the negative sign
+		len++;
+		n = n / 10;
 	}
-	while (nb > 0)
-	{
-		counter++;
-		nb /= 10;
-	}
-	return (counter);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int	len;
+	char			*s;
+	long int		len;
+	unsigned int	number;
+	int				sign;
 
-	len = count(n);
-	char *str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	sign = 1;
+	len = ft_len(n);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(s))
 		return (NULL);
-	str[len--] = '\0'; // Set the null terminator at the end
+	s[len--] = '\0';
+	if (n == 0)
+		s[0] = '0';
 	if (n < 0)
 	{
-		str[0] = '-';
-		n = -n;
+		sign *= -1;
+		number = n * -1;
+		s[0] = '-';
 	}
-	if (n == 0)
-		str[0] = '0';
-	while (n > 0)
-	{
-		str[len--] = (n % 10) + '0';
-		n /= 10;
-	}
-	return (str);
+	else
+		number = n;
+	s = ft_char(s, number, len);
+	return (s);
 }
 
 /*
