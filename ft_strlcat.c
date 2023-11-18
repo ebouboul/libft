@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (lensrc);
 	if (size != 0)
 	{
-		while (i < size - 1 && src[i] != '\0')
+		while (i + lendst < size - 1 && src[i] != '\0')
 		{
 			dst[lendst + i] = src[i];
 			i++;
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (size > lendst)
 		return (lendst + lensrc);
 	else
-		return (size + lendst);
+		return (size + lensrc);
 }
 /*
 int	main(void) {

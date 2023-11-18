@@ -14,42 +14,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	s_length;
-	size_t	substr_length;
-	size_t	i;
+	size_t	finish;
+	char	*newstr;
+	size_t	slen;
 
-	if (s == NULL)
-	{
-		return (NULL); // Handle invalid input
-	}
-	s_length = 0;
-	while (s[s_length] != '\0')
-	{
-		s_length++;
-	}
-	if (start >= s_length)
-	{
-		return (NULL); // Start index is out of range
-	}
-	substr_length = len;
-	if (start + len > s_length)
-	{
-		substr_length = s_length - start;
-			// Adjust length if it exceeds the string length
-	}
-	char *substr = (char *)malloc(substr_length + 1); 
-	if (substr == NULL)
-	{
-		return (NULL); // Memory allocation failed
-	}
-	i = 0;
-	while (i < substr_length)
-	{
-		substr[i] = s[start + i];
-		i++;
-	}
-	substr[substr_length] = '\0'; // Null-terminate the substring
-	return (substr);
+	if (!s)
+		return (0);
+	slen = ft_strlen(s);
+	finish = 0;
+	if (start >= slen)
+		return (ft_strdup(""));
+	finish = slen - start;
+	if (finish > len)
+		finish = len;
+	newstr = (char *)malloc(finish + 1);
+	if (!newstr)
+		return (0);
+	ft_strlcpy(newstr, &s[start], finish + 1);
+	return (newstr);
 }
 
 /*

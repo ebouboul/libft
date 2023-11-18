@@ -12,108 +12,114 @@
 
 #include "libft.h"
 
-static int	countwords(const char *str, char c)
+static char	**freearray(char **str, int i)
 {
-	int	counter;
-	int	i;
-
-	counter = 0;
-	i = 0;
-	while (str[i] != '\0')
+	while (i > 0)
 	{
-		while (str[i] == c)
+		i--;
+		free(str[i]);
+	}
+	free(str);
+	return (0);
+}
+
+static int	coutwords(char const *s, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
 			i++;
-		if (str[i] != '\0')
+		else
 		{
-			counter++;
-			while (str[i] != '\0' && str[i] != c)
+			count++;
+			while (s[i] != c && s[i])
 				i++;
 		}
 	}
-	return (counter);
+	return (count);
 }
 
-static char	*copyword(const char *s, int start, int len)
+static char	*copywords(char const *s, char *word, int i, int lenword)
 {
-	char	*word;
-	int		i;
+	int	j;
 
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	if (!word)
-		return (NULL);
-	i = 0;
-	while (len > 0)
+	j = 0;
+	while (lenword > 0)
 	{
-		word[i] = s[start];
-		i++;
-		start++;
-		len--;
+		word[j] = s[i - lenword];
+		lenword--;
+		j++;
 	}
-	word[i] = '\0';
+	word[j] = '\0';
 	return (word);
+}
+
+static char	**splitwords(char const *s, char c, char **s2, int countwords)
+{
+	int	i;
+	int	lenword;
+	int	word;
+
+	word = 0;
+	i = 0;
+	lenword = 0;
+	while (word < countwords)
+	{
+		while (s[i] == c)
+			i++;
+		while (s[i] != c && s[i])
+		{
+			lenword++;
+			i++;
+		}
+		s2[word] = (char *)malloc(lenword + 1);
+		if (!s2[word])
+			return (freearray(s2, word));
+		copywords(s, s2[word], i, lenword);
+		lenword = 0;
+		word++;
+	}
+	s2[word] = 0;
+	return (s2);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		numwords;
+	int		wc;
 	char	**s2;
-	int		i;
-	int		word;
-	int		wordlen;
-	int		j;
 
+	wc = coutwords(s, c);
 	if (!s)
-		return (NULL);
-	numwords = countwords(s, c);
-	printf("%d\n", numwords);
-	s2 = (char **)malloc(sizeof(char *) * (numwords + 1));
+		return (0);
+	s2 = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (!s2)
-		return (NULL);
-	i = 0;
-	word = 0;
-	while (word < numwords)
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		wordlen = 0;
-		while (s[i] && s[i] != c)
-		{
-			i++;
-			wordlen++;
-		}
-		s2[word] = copyword(s, i - wordlen, wordlen);
-		if (!s2[word])
-		{
-			j = 0;
-			while (j < word)
-			{
-				free(s2[j]);
-				j++;
-			}
-			free(s2);
-			return (NULL);
-		}
-		word++;
-	}
-	s2[word] = NULL;
+		return (0);
+	splitwords(s, c, s2, wc);
 	return (s2);
 }
 /*
 int	main(void)
 {
-	const char *input_string = "hi0hello0wohrld";
-	char **result = ft_split(input_string, '0');
+	const char	*input_string;
+	char		**result;
+	int			i;
 
+	input_string = "hi0hello0wohrld";
+	result = ft_split(input_string, '0');
 	if (result != NULL)
 	{
 		printf("Split Strings:\n");
-		int i = 0;
+		i = 0;
 		while (result[i] != NULL)
 		{
 			printf("%s\n", result[i]);
 			i++;
 		}
-
 		// Free the allocated memory
 		i = 0;
 		while (result[i] != NULL)
@@ -127,7 +133,6 @@ int	main(void)
 	{
 		printf("Error: Unable to split string.\n");
 	}
-
 	return (0);
 }
 */

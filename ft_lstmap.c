@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebouboul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 17:44:57 by ebouboul          #+#    #+#             */
-/*   Updated: 2023/11/03 17:44:59 by ebouboul         ###   ########.fr       */
+/*   Created: 2023/11/18 00:43:14 by ebouboul          #+#    #+#             */
+/*   Updated: 2023/11/18 00:43:16 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*newlist;
+	t_list	*head;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n && (s1[i] || s2[i]))
+	if (!f || !lst)
+		return (NULL);
+	head = NULL;
+	while (lst)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		newlist = ft_lstnew(f(lst->content));
+		if (!newlist)
+		{
+			ft_lstclear(&newlist, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&head, newlist);
+		lst = lst->next;
 	}
-	return (0);
+	return (head);
 }
-/*
-#include <stdio.h>
-
-int main ()
-{
-	char	*s1;
-	char	*s2;
-
-	s1 = "hello";
-	s2 = "hell";
-	printf("%d", ft_strncmp(s1,s2,4));
-}
-*/

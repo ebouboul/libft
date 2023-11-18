@@ -11,31 +11,29 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	i;
 
-	d = dest;
-	s = src;
-	if (d == s)
+	if (src == dest)
+		return (dest);
+	if (src > dest)
 	{
-		return (d);
-	}
-	if (d < s || d >= s + n)
-	{
-		while (n--)
+		i = 0;
+		while (i < n)
 		{
-			*d++ = *s++;
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
 		}
 	}
 	else
 	{
-		d = d + n - 1;
-		s = s + n - 1;
-		while (n--)
+		i = n;
+		while (i > 0)
 		{
-			*d-- = *s--;
+			i--;
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		}
 	}
 	return (dest);

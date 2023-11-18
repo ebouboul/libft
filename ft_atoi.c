@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	ft_atoi(const char *nptr)
 {
 	unsigned long int	result;
-	int	sign;
-	int i;
+	int					sign;
+	int					i;
 
 	result = 0;
 	sign = 1;
 	i = 0;
-while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))	{
+	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+	{
 		i++;
 	}
 	if (nptr[i] == '+' || nptr[i] == '-')
@@ -41,12 +43,13 @@ while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))	{
 
 /*
 #include <stdio.h>
+
 int	main(void) {
     const char *str = "2147483648154646"; 
     int value = atoi(str); 
 
     printf("Converted integer: %d\n", value);
-	    printf("dialhom: %d\n", atoi(str));
+			printf("dialhom: %d\n", atoi(str));
 
 
     return (0);

@@ -27,7 +27,9 @@ char	*ft_strrchr(const char *s, int c)
 			cnt = i;
 		i++;
 	}
-	if (cnt == 0 && a[0] != c)
+	if (a[i] == c)
+		return (a = &a[i]);
+	else if (cnt == 0 && a[0] != c)
 		return (NULL);
 	else
 	{

@@ -9,8 +9,8 @@
 /*   Updated: 2023/11/03 23:49:45 by ebouboul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
@@ -27,6 +27,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
 /*
 #include <stdio.h>
 
