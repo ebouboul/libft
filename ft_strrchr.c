@@ -14,27 +14,27 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*a;
 	int		i;
-	int		cnt;
+	int		count;
+	char	*str;
 
-	a = (char *)s;
+	str = (char *)s;
 	i = 0;
-	cnt = 0;
-	while (a[i] != '\0')
+	count = 0;
+	while (str[i] != '\0')
 	{
-		if (a[i] == c)
-			cnt = i;
+		if (str[i] == (unsigned char)c)
+			count = i;
 		i++;
 	}
-	if (a[i] == c)
-		return (a = &a[i]);
-	else if (cnt == 0 && a[0] != c)
-		return (NULL);
+	if (str[i] == (unsigned char)c)
+		return (str = &str[i]);
+	else if (count == 0 && s[0] != (unsigned char)c)
+		return (0);
 	else
 	{
-		a = &a[cnt];
-		return (a);
+		str = &str[count];
+		return (str);
 	}
 }
 

@@ -12,95 +12,67 @@
 
 #include "libft.h"
 
-static char	**freearray(char **str, int i)
+static size_t	ft_countword(char const *s, char c)
 {
-	while (i > 0)
-	{
-		i--;
-		free(str[i]);
-	}
-	free(str);
-	return (0);
-}
-
-static int	coutwords(char const *s, char c)
-{
-	int	i;
-	int	count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
+	if (!s)
+		return (0);
 	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] == c)
 			i++;
-		else
-		{
+		if (s[i])
 			count++;
-			while (s[i] != c && s[i])
-				i++;
-		}
+		while (s[i] != c && s[i])
+			i++;
 	}
 	return (count);
 }
 
-static char	*copywords(char const *s, char *word, int i, int lenword)
+static char	**free_tab(char **tab, size_t j)
 {
-	int	j;
+	size_t	i;
 
-	j = 0;
-	while (lenword > 0)
-	{
-		word[j] = s[i - lenword];
-		lenword--;
-		j++;
-	}
-	word[j] = '\0';
-	return (word);
-}
-
-static char	**splitwords(char const *s, char c, char **s2, int countwords)
-{
-	int	i;
-	int	lenword;
-	int	word;
-
-	word = 0;
 	i = 0;
-	lenword = 0;
-	while (word < countwords)
+	while (i < j)
 	{
-		while (s[i] == c)
-			i++;
-		while (s[i] != c && s[i])
-		{
-			lenword++;
-			i++;
-		}
-		s2[word] = (char *)malloc(lenword + 1);
-		if (!s2[word])
-			return (freearray(s2, word));
-		copywords(s, s2[word], i, lenword);
-		lenword = 0;
-		word++;
+		free(tab[i]);
+		i++;
 	}
-	s2[word] = 0;
-	return (s2);
+	free(tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		wc;
-	char	**s2;
+	char	**tab;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	wc = coutwords(s, c);
-	if (!s)
-		return (0);
-	s2 = (char **)malloc(sizeof(char *) * (wc + 1));
-	if (!s2)
-		return (0);
-	splitwords(s, c, s2, wc);
-	return (s2);
+	tab = (char **)malloc(sizeof(char *) * (ft_countword(s, c) + 1));
+	if (!s || !tab)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i] && j < ft_countword(s, c))
+	{
+		while (s[i] == c)
+			i++;
+		k = i;
+		while (s[i] != c && s[i])
+			i++;
+		tab[j] = ft_substr(s, k, i - k);
+		if (i > k && !(tab[j]))
+			return (free_tab(tab, j));
+		j++;
+	}
+	tab[j] = NULL;
+	return (tab);
 }
 /*
 int	main(void)
