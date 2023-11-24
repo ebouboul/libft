@@ -19,11 +19,3 @@ int	ft_isascii(int c)
 	return (0);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void) {
-    wchar_t a = L'ة';
-    printf("%d", ft_isascii(a));
-    return (0);
-}*/

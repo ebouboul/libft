@@ -25,25 +25,3 @@ char	*ft_strdup(const char *src)
 	return (dest);
 }
 
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-
-int	main(void) {
-    const char *original = "Hello, World!";
-    
-    char *duplicate = ft_strdup(original);
-    
-    if (duplicate != NULL) {
-        printf("Original: %s\n", original);
-        printf("Duplicate: %s\n", duplicate);
-        free(duplicate); 
-    } else {
-        printf("Memory allocation failed.\n");
-    }
-
-    return (0);
-}
-*/

@@ -38,14 +38,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 }
 
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*str;
-
-	str = "hello";
-	printf("%s", ft_strrchr(str,'l'));
-}
-*/

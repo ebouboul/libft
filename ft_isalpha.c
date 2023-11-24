@@ -17,12 +17,4 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-/*
-#include <stdio.h>
 
-int	main(void)
-{
-	char a = 'a';
-	printf("%d",ft_isalpha(a));
-	return (0);
-}*/

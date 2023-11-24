@@ -64,11 +64,4 @@ char	*ft_itoa(int n)
 	return (s);
 }
 
-/*
-#include <stdio.h>
 
-int	main(void)
-{
-    printf("%s\n", ft_itoa(1521515));
-}
-*/

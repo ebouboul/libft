@@ -18,12 +18,12 @@ char *ft_substr(const char *s, unsigned int start , size_t len)
     size_t a = 0;
     if(!s)
     return (NULL);
-    size_t i = strlen(s);
+    size_t i = ft_strlen(s);
     if(start > i)
-    return (strdup(""));
-    if(len > strlen(s + start))
-    len = strlen(s + start);
-    str = calloc(len + 1, sizeof(char));
+    return (ft_strdup(""));
+    if(len > ft_strlen(s + start))
+    len = ft_strlen(s + start);
+    str = ft_calloc(len + 1, sizeof(char));
     if(!str)
     return(NULL);
     while (a < len)
@@ -34,25 +34,4 @@ char *ft_substr(const char *s, unsigned int start , size_t len)
     return(str);
 }
 
-/*
-int	main(void) {
-    const char *input_string = "hello honey";
-    unsigned int start_index = 6;
-    size_t substring_length = 5;
 
-    char *result = ft_substr(input_string, start_index, substring_length);
-
-    if (result != NULL) {
-        printf("Original String: %s\n", input_string);
-        printf("Substring from index %u with length %zu: %s\n", start_index,
-		substring_length, result);
-
-        // Don't forget to free the allocated memory
-        free(result);
-    } else {
-        printf("Error: Unable to create substring.\n");
-    }
-
-    return (0);
-}
-*/

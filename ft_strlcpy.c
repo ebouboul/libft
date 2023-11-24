@@ -24,19 +24,3 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
     }
     return(len);
 }
-/*
-#include <stdio.h>
-
-int	main(void) {
-    char destination[10];
-    const char *source = "Hello, World!";
-    size_t bufferSize = sizeof(destination);
-
-    size_t copiedLength = strlcpy(destination, source, bufferSize);
-
-    printf("Copied String: %s\n", destination);
-    printf("Length of Copied String: %zu\n", copiedLength);
-
-    return (0);
-}
-*/

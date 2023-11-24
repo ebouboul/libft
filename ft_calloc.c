@@ -12,30 +12,17 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*str;
+	void	*array;
+	size_t	len;
 
-	str = (void *)malloc(count * size);
-	if (!str)
-		return (0);
-	ft_bzero(str, count * size);
-	return (str);
+	len = nmemb * size;
+	if (nmemb != 0 && len / nmemb != size)
+		return (NULL);
+	array = (void *)malloc(len);
+	if (array == NULL)
+		return (NULL);
+	ft_bzero(array, (len));
+	return (array);
 }
-/*
-#include <stdio.h>
-
-int	main(void) {
-    size_t count = 5;
-    size_t size = 10;
-    
-    void *ptr = ft_calloc(count, size);
-    
-    if (ptr) {
-        printf("Memory allocation successful\n");
-        free(ptr);
-    } else {
-        printf("Memory allocation failed\n");
-    }
-    return (0);
-}*/

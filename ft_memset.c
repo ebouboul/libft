@@ -28,21 +28,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-    char myArray[10];
-	char	value;
-
-    value = 'A';
-    ft_memset(myArray, value, 5);
-    // Print the content of myArray
-    for (size_t i = 0; i < sizeof(myArray); i++) {
-        printf("%c ", myArray[i]);
-    }
-    printf("\n");
-    return (0);
-}
-*/

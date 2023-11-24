@@ -41,18 +41,3 @@ int	ft_atoi(const char *nptr)
 	return (result * sign);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void) {
-    const char *str = "2147483648154646"; 
-    int value = atoi(str); 
-
-    printf("Converted integer: %d\n", value);
-			printf("dialhom: %d\n", atoi(str));
-
-
-    return (0);
-}
-
-*/

@@ -19,12 +19,3 @@ int	ft_isprint(int c)
 	return (0);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char a = 'a';
-	printf("%d",ft_isptint(a));
-	return (0);
-}*/

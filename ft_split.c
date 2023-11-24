@@ -74,37 +74,3 @@ char	**ft_split(char const *s, char c)
 	tab[j] = NULL;
 	return (tab);
 }
-/*
-int	main(void)
-{
-	const char	*input_string;
-	char		**result;
-	int			i;
-
-	input_string = "hi0hello0wohrld";
-	result = ft_split(input_string, '0');
-	if (result != NULL)
-	{
-		printf("Split Strings:\n");
-		i = 0;
-		while (result[i] != NULL)
-		{
-			printf("%s\n", result[i]);
-			i++;
-		}
-		// Free the allocated memory
-		i = 0;
-		while (result[i] != NULL)
-		{
-			free(result[i]);
-			i++;
-		}
-		free(result);
-	}
-	else
-	{
-		printf("Error: Unable to split string.\n");
-	}
-	return (0);
-}
-*/

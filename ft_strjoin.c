@@ -40,24 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (newstr);
 }
 
-/*
-#include <stdio.h>
-
-int	main(void) {
-    const char *s1 = "hruy    ";
-    const char *s2 = "gjhgjf";
-    char *result = ft_strjoin(s1, s2);
-
-    if (result != NULL) {
-        printf("String 1: %s\n", s1);
-        printf("String 2: %s\n", s2);
-        printf("Concatenated String: %s\n", result);
-        
-        free(result);
-    } else {
-        printf("Error: Unable to concatenate strings.\n");
-    }
-
-    return (0);
-}
-*/

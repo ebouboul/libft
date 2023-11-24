@@ -26,19 +26,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-/*int main() {
-    const char *str = "Hello, World!";
-    char searchChar = '8';
-    size_t n = strlen(str);
-
-    void *result = ft_memchr(str, searchChar, n);
-
-    if (result != 0) {
-        printf("Found '%c' at position %td\n", searchChar, (char *)result
-		- str);
-    } else {
-        printf("'%c' not found in the string\n", searchChar);
-    }
-
-    return (0);
-} */

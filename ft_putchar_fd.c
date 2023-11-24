@@ -18,24 +18,4 @@ void	ft_putchar_fd(char c, int fd)
         return;
 	write(fd, &c, 1);
 }
-/*
-#include <fcntl.h>
-#include <stdio.h>
 
-
-int	main(void)
-{
-	char	c;
-	int		fd;
-
-     c = 'a';
-    fd = open("file.txt",O_CREAT | O_RDWR,0666);
-    
-    if(fd != EOF)
-        printf("succes\n");
-    
-    printf("%d\n",fd);
-    ft_putchar_fd(c,fd);
-    close(fd);
-}
-*/

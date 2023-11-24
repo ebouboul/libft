@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
-	str = malloc(sizeof(char) * strlen(s) + 1);
+	str = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
 	while (s[i])
@@ -29,24 +29,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*
-static char	helper(unsigned int i, char c)
-{
-    if (c >= 'a' && c <= 'z')
-    {
-        return (c - 'a' + 'A');
-    }
-    return (c);
-}
-#include <stdio.h>
-
-int main ()
-{
-	char const	*s;
-	char		*str;
-
-    s = "hellohcfhy554'93'SA";
-    str = ft_strmapi(s,helper);
-    printf("%s",str);
-}
-*/

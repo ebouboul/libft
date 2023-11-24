@@ -25,22 +25,3 @@ char	*ft_strchr(char *s, int c)
 	return ((char *)(s + i));
 }
 
-/*
-#include <stdio.h>
-
-
-int	main(void) {
-    const char *str = "Hello, World!";
-    char searchChar = 'W';
-
-    const char *result = ft_strchr(str, searchChar);
-
-    if (result != 0) {
-        printf("Found '%c' at position %td\n", searchChar, result - str);
-    } else {
-        printf("'%c' not found in the string\n", searchChar);
-    }
-
-    return (0);
-}
-*/

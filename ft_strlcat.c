@@ -37,17 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	else
 		return (size + lensrc);
 }
-/*
-int	main(void) {
-    char destination[20] = "Hello, ";
-    const char *source = "World!";
-    size_t bufferSize = sizeof(destination);
-
-    size_t copiedLength = ft_strlcat(destination, source, bufferSize);
-
-    printf("Concatenated String: %s\n", destination);
-    printf("Total Length: %zu\n", copiedLength);
-
-    return (0);
-}
-*/

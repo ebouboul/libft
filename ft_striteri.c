@@ -25,24 +25,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
-/*
-#include <stdio.h>
-
-// Sample function that increments characters by their index
-void	increment_char(unsigned int index, char *c) {
-    *c += (char)index;
-}
-
-int	main(void) {
-    char test_string[] = "Hello, World!";
-    
-    printf("Original String: %s\n", test_string);
-
-    // Applying the increment_char function to each character in the string
-    ft_striteri(test_string, &increment_char);
-
-    printf("Modified String: %s\n", test_string);
-
-    return (0);
-}
-*/
