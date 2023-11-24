@@ -24,4 +24,3 @@ char	*ft_strdup(const char *src)
 	dest[size] = '\0';
 	return (dest);
 }
-

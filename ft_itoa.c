@@ -63,5 +63,3 @@ char	*ft_itoa(int n)
 	s = ft_char(s, number, len);
 	return (s);
 }
-
-

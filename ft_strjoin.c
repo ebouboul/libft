@@ -39,4 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	newstr[i] = '\0';
 	return (newstr);
 }
-

@@ -40,4 +40,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-
